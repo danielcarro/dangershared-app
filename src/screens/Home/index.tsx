@@ -18,10 +18,10 @@ const HomeScreen: React.FC = () => {
             <Container>
                 <SquareBackground>
                     <Button onPress={() => navigation.navigate('CameraScreen' as never)}>
-                        <ButtonText>GRAVAR VIDEO</ButtonText>
+                        <ButtonText>RECORD FIRE</ButtonText>
                     </Button>
                     <Button onPress={() => navigation.navigate('MapaScreen' as never)}>
-                        <ButtonText>ACESSAR O MAPA</ButtonText>
+                        <ButtonText>ACCESS THE MAP</ButtonText>
                     </Button>
                 </SquareBackground>
             </Container>

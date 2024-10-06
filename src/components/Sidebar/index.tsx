@@ -18,7 +18,7 @@ const Sidebar: React.FC<SidebarProps> = ({ children }) => {
 
   const menuItems = [
     { icon: 'home', text: 'Home', onPress: () => navigation.navigate('Home' as never) },
-    { icon: 'info', text: 'Saiba sobre o projeto', onPress: () => navigation.navigate('AboutProject' as never) },
+    { icon: 'info', text: 'About project', onPress: () => navigation.navigate('AboutProject' as never) },
 
   ];
 

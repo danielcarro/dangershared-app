@@ -38,7 +38,7 @@ const LocalizationScreen: React.FC = () => {
                     />
                 </MapView>
                 <View style={{ padding: 10 }}>
-                    <Text style={{ color: 'white'}} >Localização Selecionada:</Text>
+                    <Text style={{ color: 'white'}} >Fire spot:</Text>
                     <Text style={{ color: 'white'}}>Latitude: {latitude}</Text>
                     <Text style={{ color: 'white'}}>Longitude: {longitude}</Text>
                 </View>

@@ -43,7 +43,7 @@ const MapaScreen: React.FC = () => {
     return (
         <LayoutBase>
             <Container>
-                <Text>Localização de Ocorrencias</Text>
+                <Text>FIRE SPOTS</Text>
                 <MapaArea>
                     <MapView
                         style={{ width: Dimensions.get('window').width, height: Dimensions.get('window').height }}
