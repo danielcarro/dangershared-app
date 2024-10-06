@@ -12,9 +12,9 @@ interface LayoutBaseProps {
 const LayoutBase: React.FC<LayoutBaseProps> = ({ children }) => {
     return (
         <Sidebar>
-        <Container>          
-                {children}  
-        </Container>
+            <Container>
+                {children}
+            </Container>
         </Sidebar>
     );
 };

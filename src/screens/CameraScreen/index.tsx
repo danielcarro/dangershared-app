@@ -2,16 +2,19 @@ import { CameraType, useCameraPermissions } from 'expo-camera';
 import { useState, useEffect } from 'react';
 import { Container, Button, ButtonText, StyledCameraView, Message, RecordButton, SendButton, DiscardButton, ButtonContainer, TimerText } from './styles';
 import { FontAwesome } from '@expo/vector-icons';
+import * as Location from 'expo-location';
+import { useNavigation } from '@react-navigation/native';
+
 
 export default function App() {
   const [facing, setFacing] = useState<CameraType>('back');
   const [permission, requestPermission] = useCameraPermissions();
   const [isRecording, setIsRecording] = useState(false);
-  const [timer, setTimer] = useState(2); 
+  const [timer, setTimer] = useState(30); 
   const [video, setVideo] = useState(false);
+  const [successMessage, setSuccessMessage] = useState<string | null>(null);
 
-
-  console.log(video);
+const navigation = useNavigation(); 
 
   useEffect(() => {
     let timerInterval: NodeJS.Timeout | null = null;
@@ -56,23 +59,57 @@ export default function App() {
     
   }
 
-  function sendRecording() {
-    console.log("Send recording");
+  async function sendRecording() {
+    setVideo(false); // Oculta os botões de ação
+    setIsRecording(false); // Certifica-se de que a gravação está parada
+
+    try {
+      let { status } = await Location.requestForegroundPermissionsAsync();
+      if (status !== 'granted') {
+        console.log("Permissão de localização negada.");
+        return;
+      }
+
+      const location = {
+        latitude: -22.9325349,
+        longitude: -45.4610182,
+      };
+
+      const userData = {
+        name: "John Doe",
+        email: "johndoe@example.com",
+      };
+
+      setSuccessMessage(
+        `Enviando video! Localização: Latitude ${location.latitude}, Longitude ${location.longitude}. Dados do usuário: Nome: ${userData.name}, Email: ${userData.email}`
+      );
+
+      setTimeout(() => {
+        setSuccessMessage('');
+        navigation.navigate('ListaScreen' as never);        
+      }, 3000);
+
+      
+
+    } catch (error) {
+      console.error("Erro ao enviar o vídeo:", error);
+    }
    
   }
+  
 
   function discardRecording() {
     console.log("Discard recording");
     setIsRecording(false);
     setVideo(false);
-    setTimer(2);
+    setTimer(30);
     
   }
 
   return (
     <Container>
       <StyledCameraView facing={facing}>
-      <TimerText hide={!isRecording || video}>{timer}</TimerText>
+      <TimerText hide={!isRecording || video}>{timer} gravando</TimerText>
 
         <ButtonContainer>
           {/* Botão de gravação, exibido apenas se não há vídeo salvo */}
@@ -87,6 +124,9 @@ export default function App() {
             <FontAwesome name="times" size={40} color="white" />
           </DiscardButton>
         </ButtonContainer>
+        {successMessage &&  (
+          <Message>{successMessage}</Message>
+        )}
       </StyledCameraView>
     </Container>
   );

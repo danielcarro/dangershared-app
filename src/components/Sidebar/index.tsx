@@ -1,11 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigation } from '@react-navigation/native';
-import { Ionicons } from '@expo/vector-icons';
-import { AdBox, ContentContainer, MenuItemText, SidebarContainer, SidebarMenu, StyledMenuItem, ToggleButton } from './styles';
-import { Image } from 'react-native';
-import { TouchableOpacity } from 'react-native';
-import { Linking } from 'react-native';
-
+import { FontAwesome } from '@expo/vector-icons';
+import { ContentContainer, AdBox, AdText, MenuItemText, SidebarContainer, SidebarMenu, StyledMenuItem, ToggleButton } from './styles';
+import { Image, TouchableOpacity } from 'react-native';
 
 interface SidebarProps {
   children: React.ReactNode;
@@ -20,30 +17,37 @@ const Sidebar: React.FC<SidebarProps> = ({ children }) => {
   };
 
   const menuItems = [
-    { icon: 'ios-home', text: 'Home', onPress: () => navigation.navigate('Home' as never) },
-    { icon: 'ios-information-circle', text: 'Saiba sobre o projeto', onPress: () => navigation.navigate('AboutProject' as never) },
-   
+    { icon: 'home', text: 'Home', onPress: () => navigation.navigate('Home' as never) },
+    { icon: 'info', text: 'Saiba sobre o projeto', onPress: () => navigation.navigate('AboutProject' as never) },
+
   ];
 
- 
-  
+
+
   return (
     <SidebarContainer>
       <SidebarMenu open={isOpen}>
 
         {menuItems.map((item, index) => (
           <StyledMenuItem key={index} highlight={index >= 4} onPress={item.onPress}>
-            <Ionicons name={item.icon} size={24} color={index >= 4 ? '#fff' : '#4b0082'} />
+            <FontAwesome name={item.icon} size={24} color={index >= 4 ? '#fff' : '#1E90FF'} />
             <MenuItemText highlight={index >= 4}>{item.text}</MenuItemText>
           </StyledMenuItem>
         ))}
 
-     
 
+        <AdBox>
+
+          <Image
+            source={require('../../assets/images/logo.png')}
+            style={{ width: 250, height: 250 }}
+          />
+
+        </AdBox>
       </SidebarMenu>
 
       <ToggleButton onPress={toggleSidebar}>
-        <Ionicons name={isOpen ? 'ios-close' : 'ios-menu'} size={24} color="#fff" />
+        <FontAwesome name={isOpen ? 'times' : 'list'} size={24} color="#fff" />
       </ToggleButton>
 
       <ContentContainer>{children}</ContentContainer>

@@ -23,9 +23,9 @@ export const SidebarMenu = styled.View<SidebarMenu>`
   right: ${props => (props.open ? '10px' : '-100%')};
   width: 85%;
   height: 100%; /* Altura de 100% do Sidebar */
-  background-color: rgba(75, 0, 130, 0.8);
+  background-color: rgba(255, 87, 51, 1);
   border-left-width: 1px;
-  border-left-color: #4b0082;
+  border-left-color: #1E90FF;
   z-index: 2;
   padding-top: 40px;
   padding-left: 10px;
@@ -77,7 +77,7 @@ export const AdBox = styled.View`
   left:10px;
   width: 97%;
   height: 200px;
-  background-color: #4b0082;
+  
   border-radius: 10px;
   justify-content: center;
   align-items: center;
@@ -97,3 +97,4 @@ interface StyledMenuItemProps {
 export const StyledMenuItem = styled(MenuItem) <StyledMenuItemProps>`
   background-color: ${props => (props.highlight ? '#4b0082' : 'rgba(255, 255, 255, 0.8)')};
 `;
+
