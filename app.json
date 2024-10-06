@@ -1,0 +1,52 @@
+{
+  "expo": {
+    "name": "Dangershared-app",
+    "slug": "dangershared-app",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./src/assets/icon/ic_launcher.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./src/assets/images/logo.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#0D1A33"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./src/assets/images/logo.png",
+        "backgroundColor": "#0D1A33"
+      },
+      "permissions": [
+        "CAMERA_ROLL",
+        "AUDIO_RECORDING",
+        "AUDIO_PLAYBACK"
+      ],
+      "package": "com.dangershared.app"
+    },
+    "web": {
+      "favicon": ""
+    },
+    "extra": {
+      "eas": {
+        "projectId": "8ff9c370-0278-4872-8c50-5991ba17847b"
+      }
+    },
+    "owner": "generation code",
+    "plugins": [
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Allow $(PRODUCT_NAME) to access your camera",
+          "microphonePermission": "Allow $(PRODUCT_NAME) to access your microphone",
+          "recordAudioAndroid": true
+        }
+      ]
+    ]
+  }
+}
