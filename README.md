@@ -1,40 +1,41 @@
 # DangerShared App
 
-## Descrição do Projeto
-**DangerShared App** é uma aplicação móvel desenvolvida em **React Native** que permite aos usuários registrar pequenos focos de incêndio em tempo real. Através da aplicação, os usuários podem filmar o local do incêndio, enviar o vídeo junto com suas coordenadas de localização, e essas informações serão processadas por uma API que alimenta um banco de dados. Em seguida, os dados são enviados para os órgãos competentes para que medidas apropriadas sejam tomadas.
+## Project Description
+**DangerShared App** is a mobile application developed in **React Native** that allows users to report small fire outbreaks in real time. Through the application, users can record a video of the fire location, send the video along with their GPS coordinates, and this information will be processed by an API that stores it in a database. The data is then forwarded to the appropriate authorities to take necessary action.
 
-## Funcionalidades Principais
-- **Captura de vídeo**: O usuário pode gravar um vídeo de até 30 segundos do foco de incêndio.
-- **Envio de localização**: A localização do usuário é enviada automaticamente junto com o vídeo.
-- **Integração com API**: O vídeo e a localização são enviados para uma API que gerencia os dados e notifica as autoridades competentes.
-- **Notificação de órgãos**: Informações sobre o incidente são passadas diretamente para os órgãos responsáveis pela contenção de incêndios.
+## Main Features
+- **Video Capture**: Users can record up to 30 seconds of video showing the fire outbreak.
+- **Location Sending**: The user’s location is automatically sent along with the video.
+- **API Integration**: The video and location data are sent to an API that manages the data and notifies the relevant authorities.
+- **Authority Notification**: Information about the incident is sent directly to the responsible firefighting or emergency services.
 
-## Tecnologias Utilizadas
-- **React Native**: Para o desenvolvimento da interface do usuário e funcionalidades da aplicação.
-- **Expo**: Utilizado para facilitar o desenvolvimento e a gestão de dependências no React Native.
-- **Styled-Components**: Para a estilização da interface.
-- **TypeScript**: Para tipagem estática no projeto, melhorando a legibilidade e a manutenção do código.
-- **API REST**: A aplicação se comunica com uma API externa para envio de dados.
-- **Geolocalização**: Para capturar automaticamente a localização do usuário.
+## Technologies Used
+- **React Native**: Used for the development of the user interface and application functionalities.
+- **Expo**: Used to facilitate development and manage dependencies in React Native.
+- **Styled-Components**: For styling the interface.
+- **TypeScript**: For static typing in the project, improving readability and maintainability of the code.
+- **REST API**: The app communicates with an external API to send data.
+- **Geolocation**: To automatically capture the user’s location.
 
-## Como Clonar e Instalar a Aplicação
+## How to Clone and Install the Application
 
-### Pré-requisitos
-Certifique-se de que você tenha instalado em sua máquina:
-- [Node.js](https://nodejs.org) (versão recomendada: LTS)
+### Prerequisites
+Make sure you have the following installed on your machine:
+- [Node.js](https://nodejs.org) (recommended version: LTS)
 - [Expo CLI](https://docs.expo.dev/get-started/installation/)
 - Git
 
-### Passos para Clonar o Repositório
+### Steps to Clone the Repository
 
-1. Abra o terminal ou prompt de comando em sua máquina.
+1. Open the terminal or command prompt on your machine.
 
-2. Execute o comando abaixo para clonar o repositório:
+2. Run the following command to clone the repository:
 
    ```bash
-   git clone https://github.com/seu-usuario/dangershared-app.git
+   git clone https://github.com/your-username/dangershared-app.git
 
-   In the project directory, you can install:
+
+In the project directory, you can install:
 
 ### `npm Install`
 
