@@ -33,3 +33,11 @@ Certifique-se de que você tenha instalado em sua máquina:
 
    ```bash
    git clone https://github.com/seu-usuario/dangershared-app.git
+
+   In the project directory, you can install:
+
+### `npm Install`
+
+In the project directory, you can run:
+
+### `npm expo start`
